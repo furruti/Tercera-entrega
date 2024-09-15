@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buscar Autor</title>
+</head>
+<body>
+    <h1>Buscar Autor</h1>
+    <form method="GET" action="">
+        <input type="text" name="q" placeholder="Nombre del autor">
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if autores %}
+        <ul>
+            {% for autor in autores %}
+                <li>{{ autor.nombre }} ({{ autor.nacionalidad }})</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron autores.</p>
+    {% endif %}
+</body>
+</html>
